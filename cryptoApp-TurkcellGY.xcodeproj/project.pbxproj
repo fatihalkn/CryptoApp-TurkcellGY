@@ -21,6 +21,13 @@
 		3DF7D6232C346C2E00C950AD /* CoinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D6222C346C2E00C950AD /* CoinService.swift */; };
 		3DF7D6252C346CD700C950AD /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D6242C346CD700C950AD /* NetworkService.swift */; };
 		3DF7D62C2C3472AF00C950AD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D62B2C3472AF00C950AD /* HomeView.swift */; };
+		3DF7D6302C3580C600C950AD /* CryptoCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D62F2C3580C600C950AD /* CryptoCategoryModel.swift */; };
+		3DF7D6322C3580E300C950AD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D6312C3580E300C950AD /* HomeViewModel.swift */; };
+		3DF7D6342C3583CD00C950AD /* CryptoCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D6332C3583CD00C950AD /* CryptoCategoryCollectionViewCell.swift */; };
+		3DF7D6362C359C2800C950AD /* CryptoListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D6352C359C2800C950AD /* CryptoListCollectionViewCell.swift */; };
+		3DF7D63E2C35CEC900C950AD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3DF7D63D2C35CEC900C950AD /* Kingfisher */; };
+		3DF7D6412C35D20900C950AD /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3DF7D6402C35D20900C950AD /* SVGKit */; };
+		3DF7D6432C35D20900C950AD /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3DF7D6422C35D20900C950AD /* SVGKitSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +46,10 @@
 		3DF7D6222C346C2E00C950AD /* CoinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinService.swift; sourceTree = "<group>"; };
 		3DF7D6242C346CD700C950AD /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		3DF7D62B2C3472AF00C950AD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3DF7D62F2C3580C600C950AD /* CryptoCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCategoryModel.swift; sourceTree = "<group>"; };
+		3DF7D6312C3580E300C950AD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		3DF7D6332C3583CD00C950AD /* CryptoCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		3DF7D6352C359C2800C950AD /* CryptoListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +57,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DF7D6432C35D20900C950AD /* SVGKitSwift in Frameworks */,
+				3DF7D6412C35D20900C950AD /* SVGKit in Frameworks */,
+				3DF7D63E2C35CEC900C950AD /* Kingfisher in Frameworks */,
 				3DF7D61F2C346A5F00C950AD /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +119,7 @@
 		3DF7D6112C34693400C950AD /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				3DF7D6372C35C3EE00C950AD /* Detail */,
 				3DF7D6122C34693F00C950AD /* Home */,
 			);
 			path = Scene;
@@ -160,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				3DF7D62B2C3472AF00C950AD /* HomeView.swift */,
+				3DF7D6332C3583CD00C950AD /* CryptoCategoryCollectionViewCell.swift */,
+				3DF7D6352C359C2800C950AD /* CryptoListCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,6 +184,7 @@
 		3DF7D6272C34728A00C950AD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3DF7D62F2C3580C600C950AD /* CryptoCategoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,8 +192,48 @@
 		3DF7D6282C34728F00C950AD /* VeiwModel */ = {
 			isa = PBXGroup;
 			children = (
+				3DF7D6312C3580E300C950AD /* HomeViewModel.swift */,
 			);
 			path = VeiwModel;
+			sourceTree = "<group>";
+		};
+		3DF7D6372C35C3EE00C950AD /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				3DF7D63B2C35C40800C950AD /* Controller */,
+				3DF7D63A2C35C40100C950AD /* Model */,
+				3DF7D6392C35C3FB00C950AD /* ViewModel */,
+				3DF7D6382C35C3F400C950AD /* View */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		3DF7D6382C35C3F400C950AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DF7D6392C35C3FB00C950AD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3DF7D63A2C35C40100C950AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3DF7D63B2C35C40800C950AD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +254,9 @@
 			name = "cryptoApp-TurkcellGY";
 			packageProductDependencies = (
 				3DF7D61E2C346A5F00C950AD /* Alamofire */,
+				3DF7D63D2C35CEC900C950AD /* Kingfisher */,
+				3DF7D6402C35D20900C950AD /* SVGKit */,
+				3DF7D6422C35D20900C950AD /* SVGKitSwift */,
 			);
 			productName = "cryptoApp-TurkcellGY";
 			productReference = 3DF7D5F32C34675B00C950AD /* cryptoApp-TurkcellGY.app */;
@@ -227,6 +288,8 @@
 			mainGroup = 3DF7D5EA2C34675B00C950AD;
 			packageReferences = (
 				3DF7D61D2C346A5F00C950AD /* XCRemoteSwiftPackageReference "Alamofire" */,
+				3DF7D63C2C35CEC900C950AD /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				3DF7D63F2C35D20900C950AD /* XCRemoteSwiftPackageReference "SVGKit" */,
 			);
 			productRefGroup = 3DF7D5F42C34675B00C950AD /* Products */;
 			projectDirPath = "";
@@ -258,10 +321,14 @@
 				3DF7D6012C34675B00C950AD /* cryptoApp_TurkcellGY.xcdatamodeld in Sources */,
 				3DF7D6232C346C2E00C950AD /* CoinService.swift in Sources */,
 				3DF7D5F72C34675B00C950AD /* AppDelegate.swift in Sources */,
+				3DF7D6302C3580C600C950AD /* CryptoCategoryModel.swift in Sources */,
+				3DF7D6342C3583CD00C950AD /* CryptoCategoryCollectionViewCell.swift in Sources */,
 				3DF7D6182C34697800C950AD /* NetworkConstants.swift in Sources */,
 				3DF7D62C2C3472AF00C950AD /* HomeView.swift in Sources */,
 				3DF7D61C2C346A3D00C950AD /* NetworkManager.swift in Sources */,
+				3DF7D6322C3580E300C950AD /* HomeViewModel.swift in Sources */,
 				3DF7D5F92C34675B00C950AD /* SceneDelegate.swift in Sources */,
+				3DF7D6362C359C2800C950AD /* CryptoListCollectionViewCell.swift in Sources */,
 				3DF7D6212C346BC100C950AD /* CryptoResponse.swift in Sources */,
 				3DF7D60F2C34688200C950AD /* HomeViewController.swift in Sources */,
 				3DF7D61A2C3469DB00C950AD /* NetworkEndPointHelper.swift in Sources */,
@@ -334,7 +401,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -391,7 +458,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -487,6 +554,22 @@
 				minimumVersion = 5.9.1;
 			};
 		};
+		3DF7D63C2C35CEC900C950AD /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
+		3DF7D63F2C35D20900C950AD /* XCRemoteSwiftPackageReference "SVGKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SVGKit/SVGKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -494,6 +577,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3DF7D61D2C346A5F00C950AD /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		3DF7D63D2C35CEC900C950AD /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DF7D63C2C35CEC900C950AD /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		3DF7D6402C35D20900C950AD /* SVGKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DF7D63F2C35D20900C950AD /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKit;
+		};
+		3DF7D6422C35D20900C950AD /* SVGKitSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DF7D63F2C35D20900C950AD /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKitSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 

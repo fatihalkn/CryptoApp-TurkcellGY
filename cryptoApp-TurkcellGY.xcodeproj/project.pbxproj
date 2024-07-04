@@ -26,8 +26,11 @@
 		3DF7D6342C3583CD00C950AD /* CryptoCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D6332C3583CD00C950AD /* CryptoCategoryCollectionViewCell.swift */; };
 		3DF7D6362C359C2800C950AD /* CryptoListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D6352C359C2800C950AD /* CryptoListCollectionViewCell.swift */; };
 		3DF7D63E2C35CEC900C950AD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3DF7D63D2C35CEC900C950AD /* Kingfisher */; };
-		3DF7D6412C35D20900C950AD /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3DF7D6402C35D20900C950AD /* SVGKit */; };
-		3DF7D6432C35D20900C950AD /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3DF7D6422C35D20900C950AD /* SVGKitSwift */; };
+		3DF7D6452C36D44E00C950AD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D6442C36D44E00C950AD /* DetailView.swift */; };
+		3DF7D6472C36D47E00C950AD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D6462C36D47E00C950AD /* DetailViewModel.swift */; };
+		3DF7D6492C36D49400C950AD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D6482C36D49400C950AD /* DetailViewController.swift */; };
+		3DF7D6512C36EC4D00C950AD /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 3DF7D6502C36EC4D00C950AD /* DGCharts */; };
+		3DF7D6542C36EEDB00C950AD /* NavigationBarExtansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D6532C36EEDB00C950AD /* NavigationBarExtansion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,10 @@
 		3DF7D6312C3580E300C950AD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		3DF7D6332C3583CD00C950AD /* CryptoCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		3DF7D6352C359C2800C950AD /* CryptoListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListCollectionViewCell.swift; sourceTree = "<group>"; };
+		3DF7D6442C36D44E00C950AD /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		3DF7D6462C36D47E00C950AD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		3DF7D6482C36D49400C950AD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3DF7D6532C36EEDB00C950AD /* NavigationBarExtansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarExtansion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DF7D6432C35D20900C950AD /* SVGKitSwift in Frameworks */,
-				3DF7D6412C35D20900C950AD /* SVGKit in Frameworks */,
 				3DF7D63E2C35CEC900C950AD /* Kingfisher in Frameworks */,
+				3DF7D6512C36EC4D00C950AD /* DGCharts in Frameworks */,
 				3DF7D61F2C346A5F00C950AD /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +92,7 @@
 		3DF7D5F52C34675B00C950AD /* cryptoApp-TurkcellGY */ = {
 			isa = PBXGroup;
 			children = (
+				3DF7D6522C36EEBA00C950AD /* Extension+UIView */,
 				3DF7D6112C34693400C950AD /* Scene */,
 				3DF7D6102C3468D000C950AD /* NetworkLayer */,
 				3DF7D60D2C34677200C950AD /* App */,
@@ -211,6 +218,7 @@
 		3DF7D6382C35C3F400C950AD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3DF7D6442C36D44E00C950AD /* DetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,6 +226,7 @@
 		3DF7D6392C35C3FB00C950AD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				3DF7D6462C36D47E00C950AD /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -232,8 +241,17 @@
 		3DF7D63B2C35C40800C950AD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3DF7D6482C36D49400C950AD /* DetailViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		3DF7D6522C36EEBA00C950AD /* Extension+UIView */ = {
+			isa = PBXGroup;
+			children = (
+				3DF7D6532C36EEDB00C950AD /* NavigationBarExtansion.swift */,
+			);
+			path = "Extension+UIView";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,8 +273,7 @@
 			packageProductDependencies = (
 				3DF7D61E2C346A5F00C950AD /* Alamofire */,
 				3DF7D63D2C35CEC900C950AD /* Kingfisher */,
-				3DF7D6402C35D20900C950AD /* SVGKit */,
-				3DF7D6422C35D20900C950AD /* SVGKitSwift */,
+				3DF7D6502C36EC4D00C950AD /* DGCharts */,
 			);
 			productName = "cryptoApp-TurkcellGY";
 			productReference = 3DF7D5F32C34675B00C950AD /* cryptoApp-TurkcellGY.app */;
@@ -289,7 +306,7 @@
 			packageReferences = (
 				3DF7D61D2C346A5F00C950AD /* XCRemoteSwiftPackageReference "Alamofire" */,
 				3DF7D63C2C35CEC900C950AD /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				3DF7D63F2C35D20900C950AD /* XCRemoteSwiftPackageReference "SVGKit" */,
+				3DF7D64F2C36EC4D00C950AD /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 3DF7D5F42C34675B00C950AD /* Products */;
 			projectDirPath = "";
@@ -317,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DF7D6472C36D47E00C950AD /* DetailViewModel.swift in Sources */,
 				3DF7D6252C346CD700C950AD /* NetworkService.swift in Sources */,
 				3DF7D6012C34675B00C950AD /* cryptoApp_TurkcellGY.xcdatamodeld in Sources */,
 				3DF7D6232C346C2E00C950AD /* CoinService.swift in Sources */,
@@ -325,10 +343,13 @@
 				3DF7D6342C3583CD00C950AD /* CryptoCategoryCollectionViewCell.swift in Sources */,
 				3DF7D6182C34697800C950AD /* NetworkConstants.swift in Sources */,
 				3DF7D62C2C3472AF00C950AD /* HomeView.swift in Sources */,
+				3DF7D6492C36D49400C950AD /* DetailViewController.swift in Sources */,
 				3DF7D61C2C346A3D00C950AD /* NetworkManager.swift in Sources */,
+				3DF7D6452C36D44E00C950AD /* DetailView.swift in Sources */,
 				3DF7D6322C3580E300C950AD /* HomeViewModel.swift in Sources */,
 				3DF7D5F92C34675B00C950AD /* SceneDelegate.swift in Sources */,
 				3DF7D6362C359C2800C950AD /* CryptoListCollectionViewCell.swift in Sources */,
+				3DF7D6542C36EEDB00C950AD /* NavigationBarExtansion.swift in Sources */,
 				3DF7D6212C346BC100C950AD /* CryptoResponse.swift in Sources */,
 				3DF7D60F2C34688200C950AD /* HomeViewController.swift in Sources */,
 				3DF7D61A2C3469DB00C950AD /* NetworkEndPointHelper.swift in Sources */,
@@ -562,12 +583,12 @@
 				minimumVersion = 7.12.0;
 			};
 		};
-		3DF7D63F2C35D20900C950AD /* XCRemoteSwiftPackageReference "SVGKit" */ = {
+		3DF7D64F2C36EC4D00C950AD /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SVGKit/SVGKit.git";
+			repositoryURL = "https://github.com/ChartsOrg/Charts.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
+				minimumVersion = 5.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -583,15 +604,10 @@
 			package = 3DF7D63C2C35CEC900C950AD /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
-		3DF7D6402C35D20900C950AD /* SVGKit */ = {
+		3DF7D6502C36EC4D00C950AD /* DGCharts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3DF7D63F2C35D20900C950AD /* XCRemoteSwiftPackageReference "SVGKit" */;
-			productName = SVGKit;
-		};
-		3DF7D6422C35D20900C950AD /* SVGKitSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3DF7D63F2C35D20900C950AD /* XCRemoteSwiftPackageReference "SVGKit" */;
-			productName = SVGKitSwift;
+			package = 3DF7D64F2C36EC4D00C950AD /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
 		};
 /* End XCSwiftPackageProductDependency section */
 

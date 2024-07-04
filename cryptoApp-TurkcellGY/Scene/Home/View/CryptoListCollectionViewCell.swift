@@ -7,7 +7,8 @@
 
 import UIKit
 import Kingfisher
-import SVGKit
+
+
 
 class CryptoListCollectionViewCell: UICollectionViewCell {
     static let identifier = "CryptoListCollectionViewCell"
@@ -77,16 +78,6 @@ class CryptoListCollectionViewCell: UICollectionViewCell {
             print("Geçersiz URL: \(coinData.iconURL)")
             return
         }
-
-        coinImageView.kf.setImage(with: url,placeholder: nil,options: [.transition(.fade(0.2))], progressBlock: nil) { result in
-            switch result {
-                
-            case .success(let value):
-                print("Resim başarıyla yüklendi: \(value.source.url?.absoluteString ?? "")")
-            case .failure(let error):
-                print("Resim yüklenirken hata oluştu: \(error.localizedDescription)")
-            }
-        }
         
         if let price = Double(coinData.price) {
             let formattedPrice = String(format: "%.2f", price)
@@ -98,6 +89,7 @@ class CryptoListCollectionViewCell: UICollectionViewCell {
         coinSymbolNameLabel.text = coinData.symbol
         coinNameLabel.text = coinData.name
         coinChangeLabel.text = coinData.change
+        coinImageView.kf.setImage(with: url)
     }
 }
 
@@ -115,12 +107,11 @@ extension CryptoListCollectionViewCell {
             coinImageView.topAnchor.constraint(equalTo: self.topAnchor),
             coinImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             coinImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 15),
-            coinImageView.heightAnchor.constraint(equalToConstant: 80),
             coinImageView.widthAnchor.constraint(equalToConstant: 90),
             
             coinSymbolNameLabel.topAnchor.constraint(equalTo: self.topAnchor,constant: 10),
             coinSymbolNameLabel.leadingAnchor.constraint(equalTo: coinImageView.trailingAnchor, constant: 10),
-             
+            
             coinNameLabel.topAnchor.constraint(equalTo: coinSymbolNameLabel.bottomAnchor, constant: 10),
             coinNameLabel.leadingAnchor.constraint(equalTo: coinImageView.trailingAnchor,constant: 10),
             

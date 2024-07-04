@@ -24,12 +24,12 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupDelegate()
         setupRegister()
+        configureNavigationBar()
         homeViewModel.requestCoin {
             DispatchQueue.main.async {
                 self.homeView.cryptoListCollectionView.reloadData()
             }
         }
-       
     }
     
     func setupRegister() {
@@ -47,6 +47,11 @@ class HomeViewController: UIViewController {
         
         homeViewModel.homeViewModelDelegate = self
     }
+    
+    func configureNavigationBar() {
+        navigationController?.navigationBar.setCenterView(title: "IIumaia Coin", image: .mainIcon)
+        navigationController?.navigationBar.tintColor = .white
+    }
 }
 
 //MARK: - HomeViewModelProtocol
@@ -54,8 +59,6 @@ extension HomeViewController: HomeViewModelProtocol {
     func totalMarketCup(totalMarketCup: String) {
         homeView.totalMarketCapPriceLabel.text = "$ \(totalMarketCup)"
     }
-    
-    
 }
 
 //MARK: - Configure CollectionView
@@ -65,7 +68,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case homeView.cryptoCategoryCollectionView:
             return  homeViewModel.cryptoName.count
         case homeView.cryptoListCollectionView:
-            return homeViewModel.coinArray.count
+            return homeViewModel.filterCoinArray.count
         default:
             break
         }
@@ -81,7 +84,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return cell
         case homeView.cryptoListCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CryptoListCollectionViewCell.identifier, for: indexPath) as! CryptoListCollectionViewCell
-            let data = homeViewModel.coinArray[indexPath.item]
+            let data = homeViewModel.filterCoinArray[indexPath.item]
             if let changeValue = Double(data.change) {
                 if changeValue > 0 {
                     cell.coinChangeLabel.textColor = .green
@@ -129,23 +132,32 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             switch cryptoType {
             case .price:
                 cell.cryptoCategoryUnderlineView.backgroundColor = .mainPurple
+                homeViewModel.filterCoinArray.sort(by: {$0.price > $1.price})
             case .hVolume:
                 cell.cryptoCategoryUnderlineView.backgroundColor = .mainPurple
+                homeViewModel.filterCoinArray.sort(by: {$0.the24HVolume > $1.the24HVolume})
             case .marketCup:
                 cell.cryptoCategoryUnderlineView.backgroundColor = .mainPurple
+                homeViewModel.filterCoinArray.sort(by: {$0.marketCap > $1.marketCap})
             case .change:
                 cell.cryptoCategoryUnderlineView.backgroundColor = .mainPurple
+                homeViewModel.filterCoinArray.sort(by: {$0.change > $1.change})
             }
             
+            homeView.cryptoListCollectionView.reloadData()
             previouslySelectedIndexPath = indexPath
             
         case homeView.cryptoListCollectionView:
-            break
-            
+            let coinListcell = collectionView.cellForItem(at: indexPath) as! CryptoListCollectionViewCell
+            let vc = DetailViewController()
+            vc.detailView.coinImageView.image = coinListcell.coinImageView.image
+            vc.detailView.coinNameLabel.text = coinListcell.coinNameLabel.text
+            vc.detailView.coinPriceLabel.text = coinListcell.coinPriceLabel.text
+            vc.detailView.coinChangeLabel.text = coinListcell.coinChangeLabel.text
+            vc.detailView.coinSymbolNameLabel.text = coinListcell.coinSymbolNameLabel.text
+            navigationController?.pushViewController(vc, animated: true)
         default:
             break
         }
-        
     }
-    
 }

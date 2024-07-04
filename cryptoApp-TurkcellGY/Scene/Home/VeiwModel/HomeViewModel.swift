@@ -15,6 +15,7 @@ class HomeViewModel {
     var homeViewModelDelegate: HomeViewModelProtocol?
     let coinService: CoinService = NetworkService()
     var coinArray = [Coin]()
+    var filterCoinArray = [Coin]()
     
     var cryptoName: [CryptoCategoryModel] = [.init(cryptoName: "Price", type: .price),
                                              .init(cryptoName: "24h Volume", type: .hVolume),
@@ -26,10 +27,10 @@ class HomeViewModel {
             switch result {
             case .success(let coin):
                 self.coinArray = coin.data.coins
+                self.filterCoinArray = self.coinArray
                 let totalMarketCup = coin.data.stats.totalMarketCap
                 self.homeViewModelDelegate?.totalMarketCup(totalMarketCup: totalMarketCup)
                 completion()
-                print(coin.data.coins)
             case .failure(let failure):
                 completion()
                 print("Error \(failure.localizedDescription)")

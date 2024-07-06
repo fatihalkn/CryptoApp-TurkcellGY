@@ -46,7 +46,7 @@ class DetailView: UIView {
     
     let coinImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -143,7 +143,7 @@ extension DetailView {
             
             coinChangeLabel.topAnchor.constraint(equalTo: coinNameLabel.topAnchor),
             coinChangeLabel.trailingAnchor.constraint(equalTo: coinContentView.trailingAnchor,constant: -10),
-            coinChangeLabel.leadingAnchor.constraint(greaterThanOrEqualTo: coinNameLabel.trailingAnchor, constant: 20),
+            coinChangeLabel.leadingAnchor.constraint(greaterThanOrEqualTo: coinNameLabel.trailingAnchor, constant: 30),
             coinChangeLabel.bottomAnchor.constraint(lessThanOrEqualTo: coinContentView.bottomAnchor, constant: 20),
 
 

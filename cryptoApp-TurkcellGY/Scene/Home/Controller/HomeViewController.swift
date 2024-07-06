@@ -57,7 +57,10 @@ class HomeViewController: UIViewController {
 //MARK: - HomeViewModelProtocol
 extension HomeViewController: HomeViewModelProtocol {
     func totalMarketCup(totalMarketCup: String) {
-        homeView.totalMarketCapPriceLabel.text = "$ \(totalMarketCup)"
+        if let totalMarketCapDouble = Double(totalMarketCup) {
+            homeView.totalMarketCapPriceLabel.text = "$\(homeViewModel.formatNumber(totalMarketCapDouble))"
+
+        }
     }
 }
 
@@ -155,6 +158,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             vc.detailView.coinPriceLabel.text = coinListcell.coinPriceLabel.text
             vc.detailView.coinChangeLabel.text = coinListcell.coinChangeLabel.text
             vc.detailView.coinSymbolNameLabel.text = coinListcell.coinSymbolNameLabel.text
+            vc.navigationItem.title = coinListcell.coinNameLabel.text
             navigationController?.pushViewController(vc, animated: true)
         default:
             break

@@ -26,6 +26,7 @@ class DetailViewController: UIViewController {
         changeValue()
         configurePieChart()
         
+        
     }
     
     func changeValue() {
@@ -56,3 +57,4 @@ class DetailViewController: UIViewController {
     
     
 }
+

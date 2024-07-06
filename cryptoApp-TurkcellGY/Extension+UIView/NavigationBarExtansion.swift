@@ -19,7 +19,7 @@ extension UINavigationBar {
         if let image = image {
             let imageView = UIImageView(image: image)
             imageView.contentMode = .scaleAspectFit
-            imageView.frame = CGRect(x: -20, y: 5, width: 48, height: 48)
+            imageView.frame = CGRect(x: -10, y: 9, width: 30, height: 30)
             containerView.addSubview(imageView)
         }
         

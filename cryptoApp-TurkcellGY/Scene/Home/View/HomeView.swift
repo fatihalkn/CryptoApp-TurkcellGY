@@ -39,7 +39,6 @@ class HomeView: UIView {
     
     let totalMarketCapPriceLabel: UILabel = {
         let label = UILabel()
-        label.text = "₺ 1412412412412421412"
         label.textColor = .white
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.translatesAutoresizingMaskIntoConstraints = false

@@ -22,6 +22,15 @@ class HomeViewModel {
                                              .init(cryptoName: "Market Cup", type: .marketCup),
                                              .init(cryptoName: "Change", type: .change)]
     
+    func formatNumber(_ number: Double) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.maximumFractionDigits = 2
+        numberFormatter.minimumFractionDigits = 2
+        numberFormatter.locale = Locale.current
+        return numberFormatter.string(from: NSNumber(value: number)) ?? ""
+    }
+    
     func requestCoin(completion: @escaping (() -> Void)) {
         coinService.getCoinInfo { result in
             switch result {

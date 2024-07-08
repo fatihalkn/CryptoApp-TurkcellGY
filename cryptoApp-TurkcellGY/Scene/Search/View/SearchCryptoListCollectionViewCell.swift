@@ -1,8 +1,8 @@
 //
-//  CryptoListCollectionViewCell.swift
+//  SearchCryptoListCollectionViewCell.swift
 //  cryptoApp-TurkcellGY
 //
-//  Created by Fatih on 3.07.2024.
+//  Created by Fatih on 8.07.2024.
 //
 
 import UIKit
@@ -12,7 +12,7 @@ import SDWebImageSVGCoder
 
 
 
-class CryptoListCollectionViewCell: UICollectionViewCell {
+class SearchCryptoListCollectionViewCell: UICollectionViewCell {
     static let identifier = "CryptoListCollectionViewCell"
     
     //MARK: - İnit Methods
@@ -106,7 +106,7 @@ class CryptoListCollectionViewCell: UICollectionViewCell {
 }
 
 //MARK: - SetupUI
-extension CryptoListCollectionViewCell {
+extension SearchCryptoListCollectionViewCell {
     func setupUI() {
         addSubview(coinImageView)
         addSubview(coinSymbolNameLabel)

@@ -25,11 +25,24 @@ class HomeViewController: UIViewController {
         setupDelegate()
         setupRegister()
         configureNavigationBar()
+        cryptoListRequest()
+    }
+    
+    func cryptoListRequest() {
         homeViewModel.requestCoin {
             DispatchQueue.main.async {
                 self.homeView.cryptoListCollectionView.reloadData()
+                self.selectInitialCategory()
             }
         }
+
+    }
+    
+    func selectInitialCategory() {
+        let initialIndexPath = IndexPath(item: 0, section: 0)
+        previouslySelectedIndexPath = initialIndexPath
+        homeView.cryptoCategoryCollectionView.selectItem(at: initialIndexPath, animated: false, scrollPosition: [])
+        collectionView(homeView.cryptoCategoryCollectionView, didSelectItemAt: initialIndexPath)
     }
     
     func setupRegister() {
@@ -50,8 +63,16 @@ class HomeViewController: UIViewController {
     
     func configureNavigationBar() {
         navigationController?.navigationBar.setCenterView(title: "IIumaia Coin", image: .mainIcon)
+        let searchButton = UIBarButtonItem(image: UIImage(systemName: "doc.text.magnifyingglass"), style: .plain, target: self, action: #selector(searchButtonTapped))
+        self.navigationItem.rightBarButtonItem = searchButton
         navigationController?.navigationBar.tintColor = .white
     }
+    
+    @objc func searchButtonTapped() {
+        let vc = SearchPageController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 //MARK: - HomeViewModelProtocol
@@ -129,21 +150,30 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let cell = collectionView.cellForItem(at: indexPath) as! CryptoCategoryCollectionViewCell
             if let previousIndexPath = previouslySelectedIndexPath {
                 let previousCell = collectionView.cellForItem(at: previousIndexPath) as! CryptoCategoryCollectionViewCell
-                previousCell.cryptoCategoryUnderlineView.backgroundColor = .black
+                UIView.animate(withDuration: 0.2) {
+                    previousCell.cryptoCategoryUnderlineView.backgroundColor = .black
+                }
+            }
+            
+            let underlineView = cell.cryptoCategoryUnderlineView
+            UIView.animate(withDuration: 0.2) {
+                underlineView.frame = CGRect(
+                    x: 0,
+                    y: underlineView.frame.origin.y,
+                    width: cell.frame.width,
+                    height: underlineView.frame.height
+                )
+                underlineView.backgroundColor = .mainPurple
             }
             
             switch cryptoType {
             case .price:
-                cell.cryptoCategoryUnderlineView.backgroundColor = .mainPurple
                 homeViewModel.filterCoinArray.sort(by: {$0.price > $1.price})
             case .hVolume:
-                cell.cryptoCategoryUnderlineView.backgroundColor = .mainPurple
                 homeViewModel.filterCoinArray.sort(by: {$0.the24HVolume > $1.the24HVolume})
             case .marketCup:
-                cell.cryptoCategoryUnderlineView.backgroundColor = .mainPurple
                 homeViewModel.filterCoinArray.sort(by: {$0.marketCap > $1.marketCap})
             case .change:
-                cell.cryptoCategoryUnderlineView.backgroundColor = .mainPurple
                 homeViewModel.filterCoinArray.sort(by: {$0.change > $1.change})
             }
             

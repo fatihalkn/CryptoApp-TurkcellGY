@@ -19,12 +19,12 @@ extension UINavigationBar {
         if let image = image {
             let imageView = UIImageView(image: image)
             imageView.contentMode = .scaleAspectFit
-            imageView.frame = CGRect(x: -10, y: 9, width: 30, height: 30)
+            imageView.frame = CGRect(x: 20, y: 9, width: 30, height: 30)
             containerView.addSubview(imageView)
         }
 
         if let title = title {
-            let titleLabel = UILabel(frame: CGRect(x: 0, y: 5, width: 170, height: 44))
+            let titleLabel = UILabel(frame: CGRect(x: 30, y: 5, width: 170, height: 44))
             titleLabel.text = title
             titleLabel.font = .systemFont(ofSize: 20, weight: .black)
             titleLabel.textAlignment = .center

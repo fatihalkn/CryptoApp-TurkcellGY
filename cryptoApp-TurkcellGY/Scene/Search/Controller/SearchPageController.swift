@@ -73,6 +73,18 @@ extension SearchPageController: UICollectionViewDelegate, UICollectionViewDataSo
         let cellWidth: CGFloat = (collectionView.frame.width) - 30
         return.init(width: cellWidth, height: cellHeight)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let coinListcell = collectionView.cellForItem(at: indexPath) as! SearchCryptoListCollectionViewCell
+        let vc = DetailViewController()
+        vc.detailView.coinImageView.image = coinListcell.coinImageView.image
+        vc.detailView.coinNameLabel.text = coinListcell.coinNameLabel.text
+        vc.detailView.coinPriceLabel.text = coinListcell.coinPriceLabel.text
+        vc.detailView.coinChangeLabel.text = coinListcell.coinChangeLabel.text
+        vc.detailView.coinSymbolNameLabel.text = coinListcell.coinSymbolNameLabel.text
+        vc.navigationItem.title = coinListcell.coinNameLabel.text
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 //MARK: -  SearchBar Configure
